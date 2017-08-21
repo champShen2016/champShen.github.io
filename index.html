@@ -137,77 +137,60 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="page1-about" class="article article-type-page1  article-index" itemscope itemprop="blogPost">
+    <article id="post-git入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/champShen.github.io/2017/08/16/about/">about</a>
+      <a class="article-title" href="/champShen.github.io/2017/08/21/git入门/">git入门</a>
     </h1>
   
 
         
-        <a href="/champShen.github.io/2017/08/16/about/" class="archive-article-date">
-  	<time datetime="2017-08-16T03:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
+        <a href="/champShen.github.io/2017/08/21/git入门/" class="archive-article-date">
+  	<time datetime="2017-08-21T08:54:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <p>关于git的简单应用…</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>省略…</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<font color="#800"># 邮箱地址填注册git时用的邮箱，然后按3个回车。 </font>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+   <figure class="highlight plain"><figcaption><span>-t rsa -C "您的邮箱地址"```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">&gt;&lt;font color=&quot;#800&quot;&gt;# 在```github```里添加公钥信任，查看公钥内容：&lt;/font&gt;</div><div class="line"></div><div class="line">&gt;	```cat ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h4 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1. 创建仓库"></a>1. 创建仓库</h4><p>在<figure class="highlight plain"><figcaption><span>respository```创建仓库。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">![image](http://omwnvazh9.bkt.clouddn.com/1.png)</div><div class="line"></div><div class="line">#### 2. 克隆仓库</div><div class="line">创建完毕后通过```git clone```命令来克隆此项目，如：</div><div class="line"></div><div class="line">```git clone git@github.com:champShen2016/test.git</div></pre></td></tr></table></figure></p>
+<h4 id="3-创建分支"><a href="#3-创建分支" class="headerlink" title="3. 创建分支"></a>3. 创建分支</h4><h5 id="a-创建本地分支"><a href="#a-创建本地分支" class="headerlink" title="a. 创建本地分支"></a>a. 创建本地分支</h5><blockquote>
+<figure class="highlight plain"><figcaption><span>checkout -b branch_name```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">该命令可以分成以下两个命令：</div><div class="line">&gt; ```git branch branch_name``` &lt;font color=&quot;#800&quot;&gt;# 表示在当前分支建立另一个新的分支，相当于复制了一份当前分支&lt;/font&gt;</div><div class="line"></div><div class="line">&gt; ```git checkout branch_name```  &lt;font color=&quot;#800&quot;&gt;# 切换到该分支&lt;/font&gt;</div><div class="line"></div><div class="line">##### b. 创建远程分支，对应本地分支</div><div class="line">```git push --set-upstream origin branch_name</div></pre></td></tr></table></figure>
+<p><font color="#800">注：第一次推送需执行此代码，以后只需执行<figure class="highlight plain"><figcaption><span>push```</span></figcaption></figure></font><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 常用命令</div></pre></td></tr></table></p>
+</blockquote>
+<p>git config –global user.name “champShen”    # 设置提交代码时使用的名称</p>
+<p>git config –global alias.co checkout        # 配置checkout的别名</p>
+<p>git config -l            # 列出所有配置</p>
+<p>git add .      # 将所有修改过的工作文件提交本地暂存区</p>
+<p>git commit -m ‘some comments’</p>
+<p>git commit -am ‘some comments’  #将git add 与 git commit -m结合在一起使用</p>
+<p>git reset –hard   # 恢复最近一次提交过的状态(从暂存区恢复到工作文件)，即放弃上次提交后的所有本次修改</p>
+<p>git push     # 推送到远程分支</p>
+<p>git checkout filename    # 放弃文件修改</p>
+<p>git checkout branch_name   # 切换到某个分支</p>
+<p>git checkout -b branch_name  # 创建分支并切换过去</p>
+<p>git checkout -b branch_name branch   # 基于branch分支创建branch_name分支并切换过去</p>
+<p>git branch -D branch_name  # 删除分支</p>
+<p>git push origin :remote_branch_name # 删除远程remote_branch_name分支</p>
+<p>git merge branch_name  # 将branch_name分支合并到当前分支</p>
+<p>git stash   # 暂存</p>
+<p>git stash pop   # 删除暂存</p>
+<p>git stash list     # 列出所有暂存内容</p>
+<p>git status        # 查看状态</p>
+<p>git log            # 查看提交信息</p>
+<p>```</p>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/champShen.github.io/2017/08/16/about/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-测试2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/champShen.github.io/2017/08/16/测试2/">测试2</a>
-    </h1>
-  
-
-        
-        <a href="/champShen.github.io/2017/08/16/测试2/" class="archive-article-date">
-  	<time datetime="2017-08-16T02:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
       
 
       
@@ -220,7 +203,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签1</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -230,57 +213,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/champShen.github.io/2017/08/16/测试2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-测试1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/champShen.github.io/2017/08/16/测试1/">测试1</a>
-    </h1>
-  
-
-        
-        <a href="/champShen.github.io/2017/08/16/测试1/" class="archive-article-date">
-  	<time datetime="2017-08-16T02:48:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/champShen.github.io/2017/08/16/测试1/">展开全文 >></a>
+          <a class="article-more-a" href="/champShen.github.io/2017/08/21/git入门/">展开全文 >></a>
         </p>
       
 
@@ -435,7 +368,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">标签1</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
